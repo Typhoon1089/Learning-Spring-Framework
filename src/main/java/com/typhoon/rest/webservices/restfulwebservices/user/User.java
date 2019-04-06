@@ -6,11 +6,16 @@ public class User {
 	
 	private Integer id; 
     
-    private String name; 
-    
-    private Date birthDate;
+	private String name; 
+	
+	private Date birthDate;
 
-    public Integer getId() {
+	// Dont need this function for POST method
+	protected User() {
+
+	}
+
+	public Integer getId() {
 		return id;
 	}
 
@@ -40,7 +45,5 @@ public class User {
 		this.name = name;
 		this.birthDate = birthDate;
 	} 
-    
-    
 
 }
