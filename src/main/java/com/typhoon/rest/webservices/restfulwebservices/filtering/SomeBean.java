@@ -1,8 +1,8 @@
 package com.typhoon.rest.webservices.restfulwebservices.filtering;
 
 import com.fasterxml.jackson.annotation.JsonFilter;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+// import com.fasterxml.jackson.annotation.JsonIgnore;
+// import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 // Not good, use @JsonIgnore for static filter
 // @JsonIgnoreProperties(value={"field1", "field2"})
