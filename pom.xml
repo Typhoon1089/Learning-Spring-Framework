@@ -20,10 +20,13 @@
 	</properties>
 
 	<dependencies>
+		<!-- Java Persistence API - JPA -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
+
+		<!-- Web -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -64,11 +67,11 @@
 			<artifactId>spring-data-rest-hal-browser</artifactId>
 		</dependency>
 
-		<!-- Authentication -->
-		<dependency>
+		<!-- Remove Authentication to keep simple -->
+		<!-- <dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
-		</dependency>
+		</dependency> -->
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
