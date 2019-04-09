@@ -1,10 +1,12 @@
 package com.typhoon.rest.webservices.restfulwebservices.user;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
 
@@ -26,6 +28,11 @@ public class User {
 	@Past
 	@ApiModelProperty(notes = "Birth date should be in the past")
 	private Date birthDate;
+
+	// map to the property "user" in Post
+	// for composite primary key, please use the @JoinColumns
+	@OneToMany(mappedBy = "user")
+	private List<Post> posts;
 
 	// Dont need this function for POST method
 	protected User() {
@@ -54,6 +61,14 @@ public class User {
 
 	public void setBirthDate(Date birthDate) {
 		this.birthDate = birthDate;
+	}
+
+	public List<Post> getPosts() {
+		return posts;
+	}
+
+	public void setPosts(List<Post> posts) {
+		this.posts = posts;
 	}
 
 	public User(Integer id, String name, Date birthDate) {

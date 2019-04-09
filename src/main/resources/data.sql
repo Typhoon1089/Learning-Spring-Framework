@@ -14,3 +14,7 @@ insert into user values (10003, sysdate(), 'Hieu');
 
 -- After starting the application, use "/h2-console" to login
 -- Ensure jdbc of "jdbc:h2:mem:testdb" and user name of "sa"
+
+-- Relationship database
+insert into post values (11001, 'My first Post', 10001);
+insert into post values (11002, 'My Second Post', 10001);
