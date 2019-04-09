@@ -63,5 +63,18 @@ public class UserJpaResource {
 				.buildAndExpand(savedUser.getId()).toUri();
 
 		return ResponseEntity.created(location).build();
-	}
+  }
+  
+  @GetMapping("/jpa/users/{id}/posts")
+  public List<Post> retrieveAllUsers(@PathVariable int id) {
+    Optional<User> userOptional = userRepository.findById(id);
+
+    if (!userOptional.isPresent()) {
+      throw new UserNotFoundException("id-"+id);
+    }
+
+    // getPosts refers to the function getPosts in class User
+    // to return to json without User information of each Post => add JsonIgnore
+    return userOptional.get().getPosts();
+  }
 }	

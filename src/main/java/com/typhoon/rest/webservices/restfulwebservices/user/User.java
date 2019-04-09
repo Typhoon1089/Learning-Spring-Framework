@@ -10,6 +10,8 @@ import javax.persistence.OneToMany;
 import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -32,6 +34,7 @@ public class User {
 	// map to the property "user" in Post
 	// for composite primary key, please use the @JoinColumns
 	@OneToMany(mappedBy = "user")
+	@JsonIgnore
 	private List<Post> posts;
 
 	// Dont need this function for POST method
